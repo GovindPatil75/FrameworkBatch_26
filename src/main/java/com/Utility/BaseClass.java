@@ -1,5 +1,7 @@
 package com.Utility;
 
+import java.time.Duration;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
@@ -27,6 +29,8 @@ public class BaseClass {
 			
 			WebDriverManager.chromedriver().setup();
 			driver=new ChromeDriver();
+			// implicit wait 
+			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 			driver.get(config.getBaseUrlQA1());
 			driver.manage().window().maximize();
 			
